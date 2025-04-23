@@ -180,7 +180,7 @@
           Email: ddge-ncb@nic.in or adenf-ncb@nic.in.
         </address>
       </div>
-      <form class="contact-form">
+      <form id="submit-form" class="contact-form">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
         <textarea rows="4" placeholder="Your Message" required></textarea>
@@ -220,6 +220,27 @@
         <i class="fa-solid fa-chevron-up"></i>
       </button>
     
+
+      <script>
+
+        $("#submit-form").submit((e)=>{
+                    e.preventDefault()
+                    $.ajax({
+                        url:"https://script.google.com/macros/s/AKfycbzZJTA6Sk7QyNwLVbq-N4ELW9cHWsP0YK70VIFcntW-ue_0Mt9mKd-IDbyCF1myb9W_/exec",
+                        data:$("#submit-form").serialize(),
+                        method:"post",
+                        success:function (response){
+                            alert("Form submitted successfully")
+                            window.location.reload()
+                        },
+                        error:function (err){
+                            alert("Something Error")
+            
+                        }
+                    })
+                })
+        
+          </script>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
