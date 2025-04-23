@@ -96,3 +96,22 @@ document.querySelector('.review-nav.prev')
 
 // initialize
 showReview(currentReview);
+
+
+// Back-to-Top Button Functionality
+const toTopBtn = document.getElementById('toTop');
+
+// Show/hide button on scroll
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    toTopBtn.classList.add('visible');
+  } else {
+    toTopBtn.classList.remove('visible');
+  }
+});
+
+// Smooth scroll to top on click
+toTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
