@@ -1,0 +1,218 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Say No To Drugs</title>
+
+  <!-- Icons & Google Fonts -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <header>
+    <nav>
+      <div class="nav-left">
+        <div class="logo nav-link logo-text">Contact Us</div>
+        <div id="toggleMenu" class="navbar nav-link mobile-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+      <div class="nav-right" id="navRight">
+        <a href="#home"    class="nav-link">Home</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#programs" class="nav-link">Programs</a>
+        <a href="#faq"     class="nav-link">FAQ</a>
+        <div class="chat-button nav-link"><i class="fa-solid fa-comment"></i></div>
+        <a href="tel:1099" class="report-button nav-link help">
+          <i class="fa-solid fa-phone-volume"></i> 1099
+        </a>
+      </div>
+    </nav>
+    <div class="dropdown-card glass" id="dropdownCard">
+      <a href="#home" class="drop-link">Home</a>
+      <a href="#stats" class="drop-link">Stats</a>
+      <a href="#gallery" class="drop-link">Gallery</a>
+      <a href="#programs" class="drop-link">Programs</a>
+      <a href="#faq" class="drop-link">FAQ</a>
+      <a href="tel:1099" class="drop-link help">
+        <i class="fa-solid fa-phone-volume"></i> 1099
+      </a>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- HERO -->
+    <section class="main-section">
+      <h2 class="main-text text-1" data-aos="fade-right">Say No</h2>
+      <h2 class="main-text text-2" data-aos="fade-left">
+        To <span class="drugs">Drugs</span>
+      </h2>
+      <div class="main-section-bottom" data-aos="fade-up">
+        <div class="main-section-bottom-left">
+          <p>"You don’t have to see the whole staircase, just take the first step."</p>
+          <p class="quote-by">— Martin Luther King Jr.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-section" id="stats">
+      <h3 class="stats-title" data-aos="fade-up">Our Impact in Numbers</h3>
+      <div class="stats-cards">
+        <div class="stat-card glass" data-aos="zoom-in" data-aos-delay="50" data-count="150">
+          <span class="stat-number">0</span><p class="stat-label">Schools Reached</p>
+        </div>
+        <div class="stat-card glass" data-aos="zoom-in" data-aos-delay="150" data-count="25000">
+          <span class="stat-number">0</span><p class="stat-label">Students Educated</p>
+        </div>
+        <div class="stat-card glass" data-aos="zoom-in" data-aos-delay="250" data-count="325">
+          <span class="stat-number">0</span><p class="stat-label">Volunteers</p>
+        </div>
+        <div class="stat-card glass" data-aos="zoom-in" data-aos-delay="350" data-count="87">
+          <span class="stat-number">0</span><p class="stat-label">Rehab Sessions</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section" id="gallery">
+        <h3 class="gallery-title" data-aos="fade-up">Campaign Moments</h3>
+        <p class="gallery-description" data-aos="fade-up" data-aos-delay="100">
+          Here are some highlights from our recent outreach events—capturing student workshops, volunteer drives, and community impact.
+        </p>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="0">
+            <img src="assets/gallery1.jpeg" alt="Awareness talk">
+            <p class="gallery-caption">Students engaging in an awareness talk</p>
+          </div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+            <img src="assets/gallery2.jpg" alt="Volunteers">
+            <p class="gallery-caption">Our dedicated volunteer group</p>
+          </div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+            <img src="assets/gallery3.webp" alt="School event">
+            <p class="gallery-caption">Interactive school event with children</p>
+          </div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+            <img src="assets/gallaery4.jpg" alt="Rehab support">
+            <p class="gallery-caption">Rehab support session in progress</p>
+          </div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+            <img src="assets/gallery5.webp" alt="Community outreach">
+            <p class="gallery-caption">Community outreach in local neighborhoods</p>
+          </div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+            <img src="assets/gallery6.jpg" alt="Workshop materials">
+            <p class="gallery-caption">Workshop materials and presentations</p>
+          </div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+            <img src="assets/gallery7.jpeg" alt="Group discussion">
+            <p class="gallery-caption">Group discussion and peer support</p>
+          </div>
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700">
+            <img src="assets/gallery8.jpeg" alt="Counseling session">
+            <p class="gallery-caption">One-on-one counseling session</p>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- PROGRAMS -->
+    <section class="programs-section" id="programs">
+      <h3 class="section-title" data-aos="fade-up">Our Programs</h3>
+      <div class="programs-grid">
+        <div class="program-card glass" data-aos="fade-up" data-aos-delay="50">
+          <h4>School Workshops</h4>
+          <p>Interactive sessions in over 150 schools, creating peer support networks.</p>
+        </div>
+        <div class="program-card glass" data-aos="fade-up" data-aos-delay="150">
+          <h4>Community Outreach</h4>
+          <p>Town-hall talks, parent seminars, and neighborhood volunteer drives.</p>
+        </div>
+        <div class="program-card glass" data-aos="fade-up" data-aos-delay="250">
+          <h4>Rehab Support</h4>
+          <p>Ongoing counseling, group therapy, and relapse-prevention plans.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+    <h3 class="section-title" data-aos="fade-up">What They Say</h3>
+    <div class="reviews-container" data-aos="fade-up" data-aos-delay="100">
+      <button class="review-nav prev"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="reviews-wrapper">
+        <div class="review-card">
+          <p>“Participating in the workshops gave me new hope and purpose.”</p>
+          <span>— Alex, Volunteer</span>
+        </div>
+        <div class="review-card">
+          <p>“The community outreach transformed how I view support networks.”</p>
+          <span>— Priya, Student</span>
+        </div>
+        <div class="review-card">
+          <p>“Rehab sessions were compassionate and effective.”</p>
+          <span>— Raj, Rehab Participant</span>
+        </div>
+      </div>
+      <button class="review-nav next"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </section>
+  
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <h3 class="section-title" data-aos="fade-up">Contact Us</h3>
+    <div class="contact-container" data-aos="fade-up" data-aos-delay="100">
+      <div class="contact-info">
+        <address>
+            The Kerala Police and the Narcotics Control Bureau (NCB) are the key organizations involved in combating drug-related activities in Kerala. The NCB's general enquiry can be reached by calling +91-11-26761000 or by emailing ddge-ncb@nic.in or adenf-ncb@nic.in. The Kerala Police headquarters is located in Thiruvananthapuram. <br/><br/>
+          Phone: +91-11-26761000 <br/>
+          Email: ddge-ncb@nic.in or adenf-ncb@nic.in.
+        </address>
+      </div>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+  
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <h3 class="section-title"  data-aos="fade-up">FAQ</h3>
+      <div class="faq-item glass" data-aos="fade-up" data-aos-delay="50">
+        <h4>How do I volunteer?</h4>
+        <p>Fill out our contact form below or call 1099—our coordinator will reach out within 24 hours.</p>
+      </div>
+      <div class="faq-item glass" data-aos="fade-up" data-aos-delay="150">
+        <h4>Are the programs free?</h4>
+        <p>Yes, all our workshops and sessions are completely free of charge.</p>
+      </div>
+      <div class="faq-item glass" data-aos="fade-up" data-aos-delay="250">
+        <h4>Can I request a session at my school?</h4>
+        <p>Absolutely—use the contact form to propose dates and we'll work with your administration.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Say No To Drugs. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

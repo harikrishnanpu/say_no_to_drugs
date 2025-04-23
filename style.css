@@ -1,0 +1,476 @@
+/* style.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --nav-link: #4d494995;
+  --main-section-drugs-red: rgba(108,16,16,.908);
+  --main-size: clamp(3.25rem, 9vw + 1rem, 10rem);
+  --glass-bg: rgba(255,255,255,.05);
+  --glass-border: rgba(255,255,255,.15);
+  --transition: .3s cubic-bezier(.4,0,.2,1);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--black);
+  color: var(--white);
+  padding-top: 70px; /* header height offset */
+  line-height: 1.5;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ---------- NAVBAR ---------- */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.nav-link {
+  background: var(--nav-link);
+  padding: 10px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .25s;
+}
+.nav-link:hover { background: rgba(255,255,255,.18); }
+.nav-left, .nav-right { display:flex; align-items:center; gap:20px; }
+.logo-text { font-size:1rem; font-weight:600; }
+.mobile-toggle { display: none; }
+.dropdown-card {
+  position: absolute;
+  top: 100%;
+  right: 2rem;
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s, transform .25s;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+}
+.dropdown-card.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.drop-link {
+  color: var(--white);
+  border-bottom:1px solid transparent;
+  padding:.25rem 0;
+  transition:.2s;
+}
+.drop-link:hover { border-color: var(--white); }
+.drop-link.help {
+  background: var(--main-section-drugs-red);
+  padding:.5rem 1rem;
+  border-radius:8px;
+}
+
+/* ---------- HERO ---------- */
+main {
+  margin:0 auto;
+  width:100%;
+  max-width:1200px;
+}
+.main-section {
+  height: 80vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position: relative;
+  text-align: center;
+  padding:0 1rem;
+  background-image: url(assets/banned-img.png);
+  background-repeat: no-repeat;
+  background-position: 80% center;
+  background-size: 30%;
+}
+
+/* Adjust the background on mid-sized screens */
+@media (max-width: 992px) {
+  .main-section {
+    background-position: 70% center;
+    background-size: 40%;  
+  }
+}
+
+/* On tablets, stack the image more centrally */
+@media (max-width: 768px) {
+  .main-section {
+    background-position: 50% 10%;
+    background-size: 60% auto;
+  }
+}
+
+/* On phones, hide or make it very small */
+@media (max-width: 600px) {
+  .main-section {
+    background-image: none !important;
+  }
+}
+
+
+.main-text {
+  font-size: var(--main-size);
+  line-height: 1.05;
+}
+.text-1 { margin-right: auto; }
+.text-2 { margin-left: 4rem; }
+.drugs { color: var(--main-section-drugs-red); }
+.main-section-bottom {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main-section-bottom-left p { font-weight:300; }
+.quote-by { font-weight:100; margin-top:10px; }
+
+/* ---------- GLASS UTIL ---------- */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+}
+
+/* ---------- STATS ---------- */
+.stats-section {
+  padding:6rem 2rem;
+  text-align: center;
+}
+.stats-title {
+  font-size:2rem;
+  margin-bottom:3rem;
+  text-transform: uppercase;
+  letter-spacing:1px;
+}
+.stats-cards {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap:2rem;
+}
+.stat-card {
+  padding:2.5rem 1.5rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  transition: var(--transition);
+}
+.stat-card:hover { transform: translateY(-6px); }
+.stat-number {
+  font-size:3rem;
+  font-weight:700;
+  color: var(--main-section-drugs-red);
+  margin-bottom:.5rem;
+}
+.stat-label { font-weight:300; }
+
+/* ---------- GALLERY ---------- */
+.gallery-section {
+  padding:6rem 2rem;
+}
+
+
+.gallery-title {
+  font-size:2rem;
+  margin-bottom:3rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-align:center;
+}
+
+.gallery-description {
+  max-width: 800px;           /* limit line length for readability */
+  margin: 0 auto 2rem;        /* center and add space below */
+  font-size: 1rem;            
+  font-weight: 300;           
+  text-align: center;         
+  color: rgba(255, 255, 255, 0.85); /* slightly muted white */
+  line-height: 1.6;
+}
+
+
+.gallery-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:1.5rem;
+}
+.gallery-grid img {
+  width:100%;
+  aspect-ratio:3/2;
+  object-fit:cover;
+  border-radius:12px;
+  filter:grayscale(100%);
+  transition: var(--transition);
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  filter:grayscale(0);
+}
+
+/* ---------- PROGRAMS ---------- */
+.programs-section {
+  padding:6rem 2rem;
+  background: #111;
+}
+.programs-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap:2rem;
+}
+.program-card {
+  padding:2rem;
+  text-align:center;
+}
+
+.section-title{
+  margin-bottom: 20px;
+}
+.program-card h4 { margin-bottom:1rem; font-size:1.25rem; }
+.program-card p  { font-weight:300; font-size:.95rem; }
+
+/* ---------- FAQ ---------- */
+.faq-section {
+  padding:6rem 2rem;
+}
+.faq-item {
+  margin-bottom:1.5rem;
+  padding: 20px;
+}
+.faq-item h4 {
+  cursor: pointer;
+  position: relative;
+  padding-right:1.5rem;
+}
+.faq-item h4::after {
+  content: '+'; position:absolute; right:0; top:0;
+}
+.faq-item.open h4::after { content: '-'; }
+.faq-item p {
+  max-height:0;
+  overflow:hidden;
+  transition: max-height .3s ease;
+}
+.faq-item.open p {
+  max-height:200px;
+  margin-top:.5rem;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  padding:2rem;
+  text-align:center;
+  font-size:.875rem;
+  color:rgba(255,255,255,.6);
+}
+
+/* ---------- BREAKPOINTS ---------- */
+@media(max-width:992px){
+  .nav-right { display:none; }
+  .mobile-toggle { display:flex; }
+  .text-2 { margin-left:2rem; }
+}
+@media(max-width:768px){
+  .text-2 { margin-left:1rem; }
+  .stats-cards, .programs-grid, .gallery-grid { grid-template-columns:1fr; }
+}
+@media(max-width:480px){
+  .text-2 { margin-left:0; }
+  .main-section-bottom { left:50%; transform:translateX(-50%); }
+}
+
+/* ─── HERO / MAIN-SECTION RESPONSIVE ADJUSTMENTS ─── */
+
+/* slightly pad the sides on medium screens */
+@media (max-width: 1200px) {
+  .main-section {
+    padding: 0 4rem;
+  }
+}
+
+/* reduce margin on the second line and scale text */
+@media (max-width: 992px) {
+  .text-2 {
+    margin-left: 2rem;    /* was 4rem */
+  }
+  /* font clamp already in place, but can tighten a bit: */
+  .main-text {
+    font-size: clamp(3rem, 8vw + 1rem, 8rem);
+  }
+}
+
+/* stack the two lines and center everything on tablets */
+@media (max-width: 768px) {
+  .main-section {
+    padding: 0 2rem;
+    height: auto;         /* allow hero to grow */
+    text-align: center;
+  }
+  .text-1, .text-2 {
+    margin: 0 auto !important;
+    transform: none;      /* remove parallax shift if needed */
+  }
+  .text-2 {
+    margin-top: 1rem;     /* add breathing room */
+  }
+  .main-section-bottom {
+    position: static;
+    transform: none;
+    margin-top: 2rem;
+  }
+}
+
+/* phones: make font smaller, keep structure */
+@media (max-width: 480px) {
+  .main-section {
+    padding: 2rem 1rem;
+  }
+  .main-text {
+    font-size: clamp(2rem, 9vw + 0.5rem, 5rem);
+  }
+}
+
+
+/* ─── Reviews Section ─── */
+.reviews-section {
+  padding: 6rem 2rem;
+}
+.reviews-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.review-nav {
+  background: var(--nav-link);
+  border: none;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.review-nav:hover {
+  background: rgba(255,255,255,0.18);
+}
+.reviews-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+.review-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.review-card.active {
+  opacity: 1;
+}
+.review-card p {
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.review-card span {
+  font-weight: 500;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* ─── Contact Section ─── */
+.contact-section {
+  padding: 6rem 2rem;
+}
+.contact-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+.contact-info {
+  flex: 1;
+  font-weight: 300;
+}
+.contact-info h4 {
+  margin-bottom: 1rem;
+}
+.contact-info address {
+  line-height: 1.6;
+}
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+}
+.contact-form button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  cursor: pointer;
+  background: var(--main-section-drugs-red);
+  color: var(--white);
+  transition: var(--transition);
+}
+.contact-form button:hover {
+  opacity: 0.9;
+}
+
+/* ─── Responsive Adjustments ─── */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  .reviews-container {
+    flex-direction: column;
+  }
+  .review-nav {
+    margin: 1rem 0;
+  }
+}
+
+.gallery-item{
+  cursor: pointer;
+}
